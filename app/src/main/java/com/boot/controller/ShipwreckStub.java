@@ -8,17 +8,17 @@ import java.util.Map;
 import com.boot.model.Shipwreck;
 
 public class ShipwreckStub {
-	private static Map<Long, Shipwreck> wrecks = new HashMap<Long, Shipwreck>();
-	private static Long idIndex = 3L;
+	private static Map<Integer, Shipwreck> wrecks = new HashMap<Integer, Shipwreck>();
+	private static int idIndex = 3;
 
 	//populate initial wrecks
 	static {
-		Shipwreck a = new Shipwreck(1L, "U869", "A very deep German UBoat", "FAIR", 200, 44.12, 138.44, 1994);
-		wrecks.put(1L, a);
-		Shipwreck b = new Shipwreck(2L, "Thistlegorm", "British merchant boat in the Red Sea", "GOOD", 80, 44.12, 138.44, 1994);
-		wrecks.put(2L, b);
-		Shipwreck c = new Shipwreck(3L, "S.S. Yongala", "A luxury passenger ship wrecked on the great barrier reef", "FAIR", 50, 44.12, 138.44, 1994);
-		wrecks.put(3L, c);
+		Shipwreck a = new Shipwreck(1, "U869", "A very deep German UBoat", "FAIR", 200, 44.12, 138.44, 1994);
+		wrecks.put(1, a);
+		Shipwreck b = new Shipwreck(2, "Thistlegorm", "British merchant boat in the Red Sea", "GOOD", 80, 44.12, 138.44, 1994);
+		wrecks.put(2, b);
+		Shipwreck c = new Shipwreck(3, "S.S. Yongala", "A luxury passenger ship wrecked on the great barrier reef", "FAIR", 50, 44.12, 138.44, 1994);
+		wrecks.put(3, c);
 	}
 
 	public static List<Shipwreck> list() {
@@ -32,16 +32,16 @@ public class ShipwreckStub {
 		return wreck;
 	}
 
-	public static Shipwreck get(Long id) {
+	public static Shipwreck get(int id) {
 		return wrecks.get(id);
 	}
 
-	public static Shipwreck update(Long id, Shipwreck wreck) {
+	public static Shipwreck update(int id, Shipwreck wreck) {
 		wrecks.put(id, wreck);
 		return wreck;
 	}
 
-	public static Shipwreck delete(Long id) {
+	public static Shipwreck delete(int id) {
 		return wrecks.remove(id);
 	}
 }
